@@ -2,6 +2,6 @@ student_names = ["AJ", "Andrew", "Mehul", "Jean Carlos", "George", "Josiah", "Gu
 
 for name in student_names:
     print(f"Currently Testing: {name}")
-    if name == "AJ":
+    if name == "Eric":
         print(f"Found him! {name}")
         break;
