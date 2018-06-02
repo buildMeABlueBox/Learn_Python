@@ -4,4 +4,4 @@ for name in student_names:
     print(f"Currently Testing: {name}")
     if name == "Eric":
         print(f"Found him! {name}")
-        break;
+        break
