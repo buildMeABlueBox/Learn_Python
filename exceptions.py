@@ -6,3 +6,5 @@ try:
 
 except KeyError:
     print("Error finding lastname")
+except TypeError:
+    print("I can't add these two together!")
