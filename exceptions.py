@@ -4,4 +4,7 @@ student={
     "feedback": None
 }
 
-lastname = student["lastname"]
+try:
+    lastname = student["lastname"]
+except KeyError:
+    print("Error finding lastname")
