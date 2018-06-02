@@ -4,7 +4,9 @@ try:
     lastname = student["lastname"]
     numbered_lastname = 3+lastname
 
-except KeyError:
+except KeyError as e:
     print("Error finding lastname")
-except TypeError:
-    print("I can't add these two together!")
+except TypeError as e:
+    print(f"I can't add these two together: {e}")
+except Exception as e:
+    print(f"Unknown Error: {e}")
