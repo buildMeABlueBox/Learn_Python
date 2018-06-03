@@ -17,10 +17,29 @@ def add_student(name, student_id=1234):
     student = {"name": name, "student_id": student_id}
     students.append(student)
 
+
 def add_student_to_list():
     student_name = input("Enter student name:")
     student_id = input("Enter student ID: ")
     add_student(student_name, student_id)
+
+
+def save_file(student):
+    try:
+        f = open("students.txt", "a")
+        f.write(student + "\n")
+        f.close()
+    except Exception as e:
+        print("Could not save file: " + e)
+
+def read_file():
+    try:
+        f = open("students.txt", "r")
+        for student in f.readlines():
+            add_student(student)
+        f.close()
+    except Exception as e:
+        print("Could not save file: " + e)
 
 while True:
     add_to_list = input("Would you like to add a student? (Please type 'Yes' or 'No'): \n").upper()
