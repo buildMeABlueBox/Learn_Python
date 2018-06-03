@@ -27,7 +27,7 @@ def add_student_to_list():
 def save_file(students):
     try:
         f = open("students.txt", "a")
-        for student in students:
+        for student in students[original_count:]:
             f.write(f"{student['name']}\n")
         f.close()
     except Exception:
@@ -44,6 +44,7 @@ def read_file():
 
 
 read_file()
+original_count = len(students)
 print_students_titlecase()
 
 while True:
