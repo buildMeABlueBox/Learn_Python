@@ -24,13 +24,14 @@ def add_student_to_list():
     add_student(student_name, student_id)
 
 
-def save_file(student):
+def save_file(students):
     try:
         f = open("students.txt", "a")
-        f.write(student + "\n")
+        for student in students:
+            f.write(f"{student['name']}\n")
         f.close()
-    except Exception as e:
-        print("Could not save file: " + e)
+    except Exception:
+        print("Could not save file")
 
 def read_file():
     try:
@@ -38,8 +39,12 @@ def read_file():
         for student in f.readlines():
             add_student(student)
         f.close()
-    except Exception as e:
-        print("Could not save file: " + e)
+    except Exception:
+        print("Could not read file")
+
+
+read_file()
+print_students_titlecase()
 
 while True:
     add_to_list = input("Would you like to add a student? (Please type 'Yes' or 'No'): \n").upper()
@@ -51,3 +56,4 @@ while True:
         print("\nPlease only type 'Yes' and 'No'")
 
 print_students_titlecase()
+save_file(students)
