@@ -9,8 +9,7 @@ def get_students_titlecase():
 
 def print_students_titlecase():
     students_titlecase = get_students_titlecase()
-    print() #Extra space - TODO: is there a more elegant way of prepending a new line without causing a ValueError?
-    print(students_titlecase)
+    print(f"\n{students_titlecase}\n")
 
 
 def add_student(name, student_id=1234):
