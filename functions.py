@@ -37,7 +37,7 @@ def read_file():
     try:
         f = open("students.txt", "r")
         for student in f.readlines():
-            add_student(student)
+            add_student(student.rstrip("\n"))
         f.close()
     except Exception:
         print("Could not read file")
